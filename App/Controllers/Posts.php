@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
-class Posts 
+use App\Core\Controller;
+
+class Posts extends Controller
 {
     public function all()
     {
@@ -11,6 +13,6 @@ class Posts
 
     public function show()
     {
-        echo config('app.title');
+        $this->view('index', ['title' => config('app.title')]);
     }
 }

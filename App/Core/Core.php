@@ -1,5 +1,7 @@
 <?php
 
+use App\Core\Controller;
+
 class Core 
 {
     protected $currentController;
@@ -25,6 +27,10 @@ class Core
         
         if(!class_exists($controller_name)){
             die("$controller_name does not exist!");
+        }
+
+        if(!is_subclass_of($controller_name, Controller::class)){
+            die("Class $controller_name should extend App\Core\Controller!");
         }
         
         $this->currentController = $controller_name;
