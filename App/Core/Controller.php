@@ -30,5 +30,7 @@ class Controller
         extract($data);
 
         require_once $file_path;
+
+        return;
     }
 }

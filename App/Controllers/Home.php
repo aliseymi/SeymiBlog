@@ -2,10 +2,12 @@
 
 namespace App\Controllers;
 
-class Home
+use App\Core\Controller;
+
+class Home extends Controller
 {
     public function index()
     {
-        echo 'Welcome to SeymiBlog!';
+        $this->view('index', ['title' => config('app.title')]);
     }
 }
