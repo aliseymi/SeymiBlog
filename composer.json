@@ -11,5 +11,7 @@
             "email": "seyedali1377mir@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "simple-crud/simple-crud": "^7.5"
+    }
 }

@@ -7,13 +7,39 @@ namespace Composer\Autoload;
 class ComposerStaticInitb2801016e8b383b81eaf36adb1863413
 {
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'SimpleCrud\\' => 11,
+        ),
+        'P' => 
+        array (
+            'Psr\\EventDispatcher\\' => 20,
+        ),
         'A' => 
         array (
+            'Atlas\\Query\\' => 12,
+            'Atlas\\Pdo\\' => 10,
             'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'SimpleCrud\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/simple-crud/simple-crud/src',
+        ),
+        'Psr\\EventDispatcher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/event-dispatcher/src',
+        ),
+        'Atlas\\Query\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/atlas/query/src',
+        ),
+        'Atlas\\Pdo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/atlas/pdo/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/App',

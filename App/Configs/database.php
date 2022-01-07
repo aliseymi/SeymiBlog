@@ -2,7 +2,7 @@
 
 return [
     'host' => 'localhost',
-    'name' => 'seymiblog',
+    'dbname' => 'seymiblog',
     'user' => 'root',
     'password' => ''
 ];

@@ -6,5 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'SimpleCrud\\' => array($vendorDir . '/simple-crud/simple-crud/src'),
+    'Psr\\EventDispatcher\\' => array($vendorDir . '/psr/event-dispatcher/src'),
+    'Atlas\\Query\\' => array($vendorDir . '/atlas/query/src'),
+    'Atlas\\Pdo\\' => array($vendorDir . '/atlas/pdo/src'),
     'App\\' => array($baseDir . '/App'),
 );
