@@ -2,7 +2,7 @@
     "name": "ali/seymiblog",
     "autoload": {
         "psr-4": {
-            "Ali\\Seymiblog\\": "src/"
+            "App\\": "App/"
         }
     },
     "authors": [
