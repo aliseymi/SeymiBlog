@@ -1,0 +1,15 @@
+{
+    "name": "ali/seymiblog",
+    "autoload": {
+        "psr-4": {
+            "Ali\\Seymiblog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "seymi",
+            "email": "seyedali1377mir@gmail.com"
+        }
+    ],
+    "require": {}
+}
