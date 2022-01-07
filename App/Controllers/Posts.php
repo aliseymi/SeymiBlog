@@ -4,8 +4,13 @@ namespace App\Controllers;
 
 class Posts 
 {
-    public function __construct()
+    public function all()
     {
-        echo 'hi from posts';
+        echo 'hi from all';
+    }
+
+    public function show()
+    {
+        echo config('app.title');
     }
 }

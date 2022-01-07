@@ -28,6 +28,24 @@ class Core
         }
         
         $this->currentController = $controller_name;
+        unset($this->currentRoute[0]);
+
+        if(!isset($this->currentRoute[1])){
+            return;
+        }
+
+        $controller = new $this->currentController;
+
+        if(!method_exists($controller, $this->currentRoute[1])){
+            die("Method {$this->currentRoute[1]} does not exist!");
+        }
+
+        $this->currentMethod = $this->currentRoute[1];
+        unset($this->currentRoute[1]);
+
+        $this->currentParams = $this->currentRoute ? array_values($this->currentRoute) : [];
+
+        call_user_func_array([$controller, $this->currentMethod], $this->currentParams);
     }
 
     public function getUrl()
