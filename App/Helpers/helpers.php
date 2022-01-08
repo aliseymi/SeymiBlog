@@ -15,3 +15,21 @@ if(!function_exists('config')){
     }
 
 }
+
+if(!function_exists('asset')){
+
+    function asset(string $path){      
+        return BASE_URl . ltrim($path, '/');
+    }
+
+}
+
+if(!function_exists('load_view')){
+
+    function load_view(string $path){
+        $view_base_path = realpath(__DIR__ . '/../Views') . '/';
+
+        include $view_base_path . str_replace('.', '/', $path) . '.php';
+    }
+
+}
