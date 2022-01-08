@@ -48,6 +48,15 @@
 						<span class="label-input100">Password Confirmation</span>
 					</div>
 
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+					
+						<div>
+							<a href="<?= url('/login/show') ?>" class="txt1">
+								Login
+							</a>
+						</div>
+					</div>
+
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
@@ -74,7 +83,7 @@
 
 				<div class="login100-more" style="background-image: url('<?= asset('img/auth/bg-01.jpg') ?>');">
 					<?php if (isset($errors)) : ?>
-						<?= load_view('auth.error' , compact('errors')) ?>
+						<?= load_view('auth.error', compact('errors')) ?>
 					<?php endif; ?>
 				</div>
 			</div>

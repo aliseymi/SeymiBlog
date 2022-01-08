@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
 
     <!--- basic page needs
@@ -9,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-   <!-- mobile specific metas
+    <!-- mobile specific metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -58,42 +59,49 @@
                 <h2 class="s-header__nav-heading h6">Site Navigation</h2>
 
                 <ul class="s-header__nav">
-                    <li class="current"><a href="index.html" title="">Home</a></li>
-                    <li class="has-children">
-                        <a href="#0" title="">Categories</a>
-                        <ul class="sub-menu">
-                            <li><a href="category.html">Design</a></li>
-                            <li><a href="category.html">Lifestyle</a></li>
-                            <li><a href="category.html">Photography</a></li>
-                            <li><a href="category.html">Vacation</a></li>
-                            <li><a href="category.html">Work</a></li>
-                            <li><a href="category.html">Health</a></li>
-                            <li><a href="category.html">Family</a></li>
-                            <li><a href="category.html">Relationship</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <a href="#0" title="">Blog</a>
-                        <ul class="sub-menu">
-                        <li><a href="single-video.html">Video Post</a></li>
-                        <li><a href="single-audio.html">Audio Post</a></li>
-                        <li><a href="single-gallery.html">Gallery Post</a></li>
-                        <li><a href="single-standard.html">Standard Post</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="styles.html" title="">Styles</a></li>
-                    <li><a href="about.html" title="">About</a></li>
-                    <li><a href="contact.html" title="">Contact</a></li>
+                    <?php if (isLoggedIn()) : ?>
+
+                        <li class="current"><a href="index.html" title="">Home</a></li>
+                        <li class="has-children">
+                            <a href="#0" title="">Categories</a>
+                            <ul class="sub-menu">
+                                <li><a href="category.html">Design</a></li>
+                                <li><a href="category.html">Lifestyle</a></li>
+                                <li><a href="category.html">Photography</a></li>
+                                <li><a href="category.html">Vacation</a></li>
+                                <li><a href="category.html">Work</a></li>
+                                <li><a href="category.html">Health</a></li>
+                                <li><a href="category.html">Family</a></li>
+                                <li><a href="category.html">Relationship</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-children">
+                            <a href="#0" title="">Blog</a>
+                            <ul class="sub-menu">
+                                <li><a href="single-video.html">Video Post</a></li>
+                                <li><a href="single-audio.html">Audio Post</a></li>
+                                <li><a href="single-gallery.html">Gallery Post</a></li>
+                                <li><a href="single-standard.html">Standard Post</a></li>
+                            </ul>
+                        </li>
+
+                    <?php else : ?>
+
+                        <li><a href="<?= url('login/show') ?>" title="">Login</a></li>
+                        <li><a href="<?= url('register/show') ?>" title="">Register</a></li>
+
+                    <?php endif; ?>
+
                 </ul> <!-- end header__nav -->
 
                 <a href="#0" title="Close Menu" class="s-header__overlay-close close-mobile-menu">Close</a>
 
             </nav> <!-- end header__nav-wrap -->
-                   
+
             <a class="s-header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
-            
+
             <div class="s-header__search">
-                    
+
                 <form role="search" method="get" class="s-header__search-form" action="#">
                     <label>
                         <span class="hide-content">Search for:</span>
@@ -104,10 +112,12 @@
 
                 <a href="#0" title="Close Search" class="s-header__overlay-close">Close</a>
 
-            </div> <!-- end search wrap -->	
+            </div> <!-- end search wrap -->
 
             <a class="s-header__search-trigger" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 18a7.952 7.952 0 004.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0018 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M10 18a7.952 7.952 0 004.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0018 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
+                </svg>
             </a>
 
         </div> <!-- end s-header__content -->
@@ -121,27 +131,27 @@
 
         <div class="masonry">
             <div class="bricks-wrapper h-group">
- 
+
                 <div class="grid-sizer"></div>
 
                 <div class="brick entry featured-grid animate-this">
                     <div class="entry__content">
 
                         <div class="featured-post-slider">
-                            
+
                             <div class="featured-post-slide">
                                 <div class="f-slide">
-                                    
+
                                     <div class="f-slide__background" style="background-image:url('./img/home/thumbs/featured/featured-1.jpg');"></div>
                                     <div class="f-slide__overlay"></div>
 
                                     <div class="f-slide__content">
                                         <ul class="f-slide__meta">
-                                            <li>September 06, 2020</li> 
-                                            <li><a href="#" >Naruto Uzumaki</a></li>
-                                        </ul>	
+                                            <li>September 06, 2020</li>
+                                            <li><a href="#">Naruto Uzumaki</a></li>
+                                        </ul>
 
-                                        <h1 class="f-slide__title"><a href="single-standard.html" title="">A Practical Guide to a Minimalist Lifestyle.</a></h1> 
+                                        <h1 class="f-slide__title"><a href="single-standard.html" title="">A Practical Guide to a Minimalist Lifestyle.</a></h1>
                                     </div>
 
                                 </div> <!-- f-slide -->
@@ -149,17 +159,17 @@
 
                             <div class="featured-post-slide">
                                 <div class="f-slide">
-                                    
+
                                     <div class="f-slide__background" style="background-image:url('./img/home/thumbs/featured/featured-2.jpg');"></div>
                                     <div class="f-slide__overlay"></div>
 
                                     <div class="f-slide__content">
                                         <ul class="f-slide__meta">
-                                            <li>September 06, 2020</li> 
-                                            <li><a href="#" >Sakura Haruno</a></li>
+                                            <li>September 06, 2020</li>
+                                            <li><a href="#">Sakura Haruno</a></li>
                                         </ul>
 
-                                        <h1 class="f-slide__title"><a href="single-standard.html" title="">Enhancing Your Designs with Negative Space</a></h1> 
+                                        <h1 class="f-slide__title"><a href="single-standard.html" title="">Enhancing Your Designs with Negative Space</a></h1>
                                     </div>
 
                                 </div> <!-- f-slide -->
@@ -167,57 +177,60 @@
 
                             <div class="featured-post-slide">
                                 <div class="f-slide">
-                                    
+
                                     <div class="f-slide__background" style="background-image:url('./img/home/thumbs/featured/featured-3.jpg');"></div>
                                     <div class="f-slide__overlay"></div>
 
                                     <div class="f-slide__content">
                                         <ul class="f-slide__meta">
-                                            <li>September 05, 2020</li> 
-                                            <li><a href="#" >Shikamaru Nara</a></li>
+                                            <li>September 05, 2020</li>
+                                            <li><a href="#">Shikamaru Nara</a></li>
                                         </ul>
 
-                                        <h1 class="f-slide__title"><a href="single-standard.html" title="">Music Album Cover Designs for Inspiration</a></h1> 
+                                        <h1 class="f-slide__title"><a href="single-standard.html" title="">Music Album Cover Designs for Inspiration</a></h1>
                                     </div>
 
                                 </div> <!-- f-slide -->
                             </div> <!-- featured-post-slide -->
 
                         </div> <!-- end feature post slider -->
-                        
+
                         <div class="featured-post-nav">
                             <button class="featured-post-nav__prev">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.707 17.293L8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M12.707 17.293L8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path>
+                                </svg>
                             </button>
                             <button class="featured-post-nav__next">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path>
+                                </svg>
                             </button>
                         </div> <!-- featured-post-nav -->
 
                     </div> <!-- end entry content -->
                 </div> <!-- end entry, featured grid -->
- 
+
                 <article class="brick entry format-standard animate-this">
-    
+
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/woodcraft-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/woodcraft-600.jpg 1x, ./img/home/thumbs/masonry/woodcraft-1200.jpg 2x" alt="">
+                            <img src="./img/home/thumbs/masonry/woodcraft-600.jpg" srcset="./img/home/thumbs/masonry/woodcraft-600.jpg 1x, ./img/home/thumbs/masonry/woodcraft-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
-    
+
                     <div class="entry__text">
                         <div class="entry__header">
-    
+
                             <div class="entry__meta">
                                 <span class="entry__cat-links">
-                                    <a href="#">Design</a> 
+                                    <a href="#">Design</a>
                                     <a href="#">Photography</a>
                                 </span>
                             </div>
-    
+
                             <h1 class="entry__title"><a href="single-standard.html">Just a Standard Format Post.</a></h1>
-                            
+
                         </div>
                         <div class="entry__excerpt">
                             <p>
@@ -225,174 +238,100 @@
                             </p>
                         </div>
                     </div> <!-- end entry__text -->
-    
+
                 </article> <!-- end entry -->
- 
+
                 <article class="brick entry format-standard animate-this">
- 
+
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/tulips-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/tulips-600.jpg 1x, ./img/home/thumbs/masonry/tulips-1200.jpg 2x" alt="">
+                            <img src="./img/home/thumbs/masonry/tulips-600.jpg" srcset="./img/home/thumbs/masonry/tulips-600.jpg 1x, ./img/home/thumbs/masonry/tulips-1200.jpg 2x" alt="">
                         </a>
-                    </div>  <!-- end entry__thumb -->
- 
+                    </div> <!-- end entry__thumb -->
+
                     <div class="entry__text">
                         <div class="entry__header">
-    
+
                             <div class="entry__meta">
                                 <span class="entry__cat-links">
                                     <a href="#">Health</a>
                                 </span>
                             </div>
-    
+
                             <h1 class="entry__title"><a href="single-standard.html">10 Interesting Facts About Caffeine.</a></h1>
-                            
+
                         </div>
                         <div class="entry__excerpt">
                             <p>
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
                             </p>
                         </div>
                     </div> <!-- end entry__text -->
-                
+
                 </article> <!-- end article -->
 
                 <article class="brick entry format-standard animate-this">
-    
+
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/dew-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/dew-600.jpg 1x, ./img/home/thumbs/masonry/dew-1200.jpg 2x" alt="">
+                            <img src="./img/home/thumbs/masonry/dew-600.jpg" srcset="./img/home/thumbs/masonry/dew-600.jpg 1x, ./img/home/thumbs/masonry/dew-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
-    
+
                     <div class="entry__text">
                         <div class="entry__header">
-    
+
                             <div class="entry__meta">
                                 <span class="entry__cat-links">
                                     <a href="#">Lifestyle</a>
                                     <a href="#">Health</a>
                                 </span>
                             </div>
-    
+
                             <h1 class="entry__title"><a href="single-standard.html">Health Benefits of Morning Dew.</a></h1>
-                            
+
                         </div>
                         <div class="entry__excerpt">
                             <p>
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
                             </p>
                         </div>
                     </div> <!-- end entry__text -->
-                    
+
                 </article> <!-- end article -->
- 
-                <article class="brick entry format-quote animate-this" >
-    
+
+                <article class="brick entry format-quote animate-this">
+
                     <div class="entry__thumb">
                         <blockquote>
                             <p>Good design is making something intelligible and memorable. Great design is making something memorable and meaningful.</p>
-    
+
                             <cite>Dieter Rams</cite>
                         </blockquote>
                     </div>
-    
+
                 </article> <!-- end article -->
- 
+
                 <article class="brick entry format-standard animate-this">
- 
+
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/rucksack-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/rucksack-600.jpg 1x, ./img/home/thumbs/masonry/rucksack-1200.jpg 2x" alt="">
+                            <img src="./img/home/thumbs/masonry/rucksack-600.jpg" srcset="./img/home/thumbs/masonry/rucksack-600.jpg 1x, ./img/home/thumbs/masonry/rucksack-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
- 
+
                     <div class="entry__text">
                         <div class="entry__header">
-    
+
                             <div class="entry__meta">
                                 <span class="entry__cat-links">
                                     <a href="#">Lifestyle</a>
                                     <a href="#">Work</a>
                                 </span>
                             </div>
-    
+
                             <h1 class="entry__title"><a href="single-standard.html">The Art Of Visual Storytelling.</a></h1>
-                            
-                        </div>
-                        <div class="entry__excerpt">
-                            <p>
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
-                            </p>
-                        </div>
-                    </div> <!-- end entry__text -->
-                
-                </article> <!-- end article -->
- 
-                <article class="brick entry format-standard animate-this" >
-        
-                    <div class="entry__thumb">
-                        <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/jump-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/jump-600.jpg 1x, ./img/home/thumbs/masonry/jump-1200.jpg 2x" alt="">
-                        </a>
-                    </div> <!-- end entry__thumb -->
-        
-                    <div class="entry__text">
-                        <div class="entry__header">
-    
-                            <div class="entry__meta">
-                                <span class="entry__cat-links">
-                                    <a href="#">Family</a>
-                                    <a href="#">Relationship</a>
-                                </span>
-                            </div>
-    
-                            <h1 class="entry__title"><a href="single-standard.html">Create Meaningful Family Moments.</a></h1>
-                            
-                        </div>
-                        <div class="entry__excerpt">
-                            <p>
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
-                            </p>
-                        </div>
-                    </div> <!-- end entry__text -->
-                        
-                </article> <!-- end article -->
- 
-                <article class="brick entry format-gallery animate-this">
- 
-                    <div class="entry__thumb slider">
-                            <div class="slider__slides">
-                                <div class="slider__slide">
-                                    <img src="./img/home/thumbs/masonry/gallery/slide-1-600.jpg" 
-                                         srcset="./img/home/thumbs/masonry/gallery/slide-1-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-1-1200.jpg 2x" alt=""> 
-                                </div>
-                                <div class="slider__slide">
-                                    <img src="./img/home/thumbs/masonry/gallery/slide-2-600.jpg" 
-                                         srcset="./img/home/thumbs/masonry/gallery/slide-2-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-2-1200.jpg 2x" alt="">
-                                </div>
-                                <div class="slider__slide">
-                                    <img src="./img/home/thumbs/masonry/gallery/slide-3-600.jpg" 
-                                         srcset="./img/home/thumbs/masonry/gallery/slide-3-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-3-1200.jpg 2x" alt="">  
-                                </div>
-                            </div>    
-                    </div> <!-- end entry__thumb -->
- 
-                    <div class="entry__text">
-                        <div class="entry__header">
-    
-                            <div class="entry__meta">
-                                <span class="entry__cat-links">
-                                    <a href="#">Vacation</a>
-                                </span>
-                            </div>
-    
-                            <h1 class="entry__title"><a href="single-gallery.html">The Best Tropical Leaves ./img/home.</a></h1>
-                            
+
                         </div>
                         <div class="entry__excerpt">
                             <p>
@@ -400,11 +339,78 @@
                             </p>
                         </div>
                     </div> <!-- end entry__text -->
-                
-                 </article> <!-- end article -->
- 
-                 <article class="brick entry format-link animate-this">
- 
+
+                </article> <!-- end article -->
+
+                <article class="brick entry format-standard animate-this">
+
+                    <div class="entry__thumb">
+                        <a href="single-standard.html" class="thumb-link">
+                            <img src="./img/home/thumbs/masonry/jump-600.jpg" srcset="./img/home/thumbs/masonry/jump-600.jpg 1x, ./img/home/thumbs/masonry/jump-1200.jpg 2x" alt="">
+                        </a>
+                    </div> <!-- end entry__thumb -->
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+
+                            <div class="entry__meta">
+                                <span class="entry__cat-links">
+                                    <a href="#">Family</a>
+                                    <a href="#">Relationship</a>
+                                </span>
+                            </div>
+
+                            <h1 class="entry__title"><a href="single-standard.html">Create Meaningful Family Moments.</a></h1>
+
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                            </p>
+                        </div>
+                    </div> <!-- end entry__text -->
+
+                </article> <!-- end article -->
+
+                <article class="brick entry format-gallery animate-this">
+
+                    <div class="entry__thumb slider">
+                        <div class="slider__slides">
+                            <div class="slider__slide">
+                                <img src="./img/home/thumbs/masonry/gallery/slide-1-600.jpg" srcset="./img/home/thumbs/masonry/gallery/slide-1-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-1-1200.jpg 2x" alt="">
+                            </div>
+                            <div class="slider__slide">
+                                <img src="./img/home/thumbs/masonry/gallery/slide-2-600.jpg" srcset="./img/home/thumbs/masonry/gallery/slide-2-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-2-1200.jpg 2x" alt="">
+                            </div>
+                            <div class="slider__slide">
+                                <img src="./img/home/thumbs/masonry/gallery/slide-3-600.jpg" srcset="./img/home/thumbs/masonry/gallery/slide-3-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-3-1200.jpg 2x" alt="">
+                            </div>
+                        </div>
+                    </div> <!-- end entry__thumb -->
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+
+                            <div class="entry__meta">
+                                <span class="entry__cat-links">
+                                    <a href="#">Vacation</a>
+                                </span>
+                            </div>
+
+                            <h1 class="entry__title"><a href="single-gallery.html">The Best Tropical Leaves ./img/home.</a></h1>
+
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                            </p>
+                        </div>
+                    </div> <!-- end entry__text -->
+
+                </article> <!-- end article -->
+
+                <article class="brick entry format-link animate-this">
+
                     <div class="entry__thumb">
                         <div class="link-wrap">
                             <p>Looking for affordable &amp; reliable web hosting? We recommend Dreamhost.</p>
@@ -413,225 +419,218 @@
                             </cite>
                         </div>
                     </div> <!-- end entry__thumb -->
-                
+
                 </article> <!-- end article -->
- 
+
                 <article class="brick entry format-audio animate-this">
-    
+
                     <div class="entry__thumb">
                         <a href="single-audio.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/guitarist-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/guitarist-600.jpg 1x, ./img/home/thumbs/masonry/guitarist-1200.jpg 2x" alt="">
+                            <img src="./img/home/thumbs/masonry/guitarist-600.jpg" srcset="./img/home/thumbs/masonry/guitarist-600.jpg 1x, ./img/home/thumbs/masonry/guitarist-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry--thumb -->
-    
+
                     <div class="entry__text">
                         <div class="entry__header">
-    
+
                             <div class="entry__meta">
                                 <span class="entry__cat-links">
                                     <a href="#">Lifestyle</a>
                                 </span>
                             </div>
-    
+
                             <h1 class="entry__title"><a href="single-audio.html">What Your Music Preference Says About You and Your Personality.</a></h1>
-                            
+
                         </div>
                         <div class="entry__excerpt">
                             <p>
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
                             </p>
                         </div>
                     </div> <!-- end entry__text -->
-                    
+
                 </article> <!-- end article -->
-    
+
                 <article class="brick entry format-video animate-this">
- 
+
                     <div class="entry__thumb video-image">
-                        <a href="https://player.vimeo.com/video/117310401?color=ffffff&title=0&byline=0&portrait=0" data-lity  class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/cookies-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/cookies-600.jpg 1x, ./img/home/thumbs/masonry/cookies-1200.jpg 2x" alt="">
+                        <a href="https://player.vimeo.com/video/117310401?color=ffffff&title=0&byline=0&portrait=0" data-lity class="thumb-link">
+                            <img src="./img/home/thumbs/masonry/cookies-600.jpg" srcset="./img/home/thumbs/masonry/cookies-600.jpg 1x, ./img/home/thumbs/masonry/cookies-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
- 
+
                     <div class="entry__text">
                         <div class="entry__header">
-    
+
                             <div class="entry__meta">
                                 <span class="entry__cat-links">
-                                    <a href="#">Lifestyle</a> 
+                                    <a href="#">Lifestyle</a>
                                     <a href="#">Health</a>
                                 </span>
                             </div>
-    
+
                             <h1 class="entry__title"><a href="single-video.html">No Sugar Oatmeal Cookies.</a></h1>
-                            
+
                         </div>
                         <div class="entry__excerpt">
                             <p>
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
                             </p>
                         </div>
                     </div> <!-- end entry__text -->
-                
-                 </article> <!-- end article -->
- 
-                 <article class="brick entry format-standard animate-this">
- 
+
+                </article> <!-- end article -->
+
+                <article class="brick entry format-standard animate-this">
+
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/walk-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/walk-600.jpg 1x, ./img/home/thumbs/masonry/walk-1200.jpg 2x" alt="">
+                            <img src="./img/home/thumbs/masonry/walk-600.jpg" srcset="./img/home/thumbs/masonry/walk-600.jpg 1x, ./img/home/thumbs/masonry/walk-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
- 
+
                     <div class="entry__text">
                         <div class="entry__header">
-    
+
                             <div class="entry__meta">
                                 <span class="entry__cat-links">
                                     <a href="#">Work</a>
                                 </span>
                             </div>
-    
+
                             <h1 class="entry__title"><a href="single-standard.html">Using Repetition and Patterns in Photography.</a></h1>
-                            
+
                         </div>
                         <div class="entry__excerpt">
                             <p>
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
                             </p>
                         </div>
                     </div> <!-- end entry__text -->
-                
+
                 </article> <!-- end article -->
- 
+
                 <article class="brick entry format standard animate-this">
- 
+
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/lamp-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/lamp-600.jpg 1x, ./img/home/thumbs/masonry/lamp-1200.jpg 2x" alt="">
+                            <img src="./img/home/thumbs/masonry/lamp-600.jpg" srcset="./img/home/thumbs/masonry/lamp-600.jpg 1x, ./img/home/thumbs/masonry/lamp-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
- 
+
                     <div class="entry__text">
                         <div class="entry__header">
-    
+
                             <div class="entry__meta">
                                 <span class="entry__cat-links">
-                                    <a href="#">Design</a> 
+                                    <a href="#">Design</a>
                                     <a href="#">Photography</a>
                                 </span>
                             </div>
-    
+
                             <h1 class="entry__title"><a href="single-standard.html">Another Standard Format Post.</a></h1>
-                            
+
                         </div>
                         <div class="entry__excerpt">
                             <p>
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
                             </p>
                         </div>
                     </div> <!-- end entry__text -->
-                
-                 </article> <!-- end article -->
 
-                 <article class="brick entry format-standard animate-this">
- 
+                </article> <!-- end article -->
+
+                <article class="brick entry format-standard animate-this">
+
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/real-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/real-600.jpg 1x, ./img/home/thumbs/masonry/real-1200.jpg 2x" alt="">
+                            <img src="./img/home/thumbs/masonry/real-600.jpg" srcset="./img/home/thumbs/masonry/real-600.jpg 1x, ./img/home/thumbs/masonry/real-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
- 
+
                     <div class="entry__text">
                         <div class="entry__header">
-    
+
                             <div class="entry__meta">
                                 <span class="entry__cat-links">
-                                    <a href="#">Travel</a> 
+                                    <a href="#">Travel</a>
                                     <a href="#">Vacation</a>
                                 </span>
                             </div>
-    
+
                             <h1 class="entry__title"><a href="single-standard.html">How We Live Is What Makes Us Real.</a></h1>
-                            
+
                         </div>
                         <div class="entry__excerpt">
                             <p>
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
                             </p>
                         </div>
                     </div> <!-- end entry__text -->
-                
-                 </article> <!-- end article -->
 
-                 <article class="brick entry format-standard animate-this">
- 
+                </article> <!-- end article -->
+
+                <article class="brick entry format-standard animate-this">
+
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/beetle-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/beetle-600.jpg 1x, ./img/home/thumbs/masonry/beetle-1200.jpg 2x" alt="">
+                            <img src="./img/home/thumbs/masonry/beetle-600.jpg" srcset="./img/home/thumbs/masonry/beetle-600.jpg 1x, ./img/home/thumbs/masonry/beetle-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
- 
+
                     <div class="entry__text">
                         <div class="entry__header">
-    
+
                             <div class="entry__meta">
                                 <span class="entry__cat-links">
                                     <a href="#">Lifestyle</a>
                                 </span>
                             </div>
-    
+
                             <h1 class="entry__title"><a href="single-standard.html">Throwback To The Good Old Days.</a></h1>
-                            
+
                         </div>
                         <div class="entry__excerpt">
                             <p>
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
                             </p>
                         </div>
                     </div> <!-- end entry__text -->
-                
-                 </article> <!-- end article -->
 
-                 <article class="brick entry format-standard animate-this">
- 
+                </article> <!-- end article -->
+
+                <article class="brick entry format-standard animate-this">
+
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/seashore-600.jpg" 
-                                 srcset="./img/home/thumbs/masonry/seashore-600.jpg 1x, ./img/home/thumbs/masonry/seashore-1200.jpg 2x" alt="">
+                            <img src="./img/home/thumbs/masonry/seashore-600.jpg" srcset="./img/home/thumbs/masonry/seashore-600.jpg 1x, ./img/home/thumbs/masonry/seashore-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
- 
+
                     <div class="entry__text">
                         <div class="entry__header">
-    
+
                             <div class="entry__meta">
                                 <span class="entry__cat-links">
-                                    <a href="#">Health</a> 
+                                    <a href="#">Health</a>
                                     <a href="#">Vacation</a>
                                 </span>
                             </div>
-    
+
                             <h1 class="entry__title"><a href="single-standard.html">What The Beach Does to Your Brain.</a></h1>
-                            
+
                         </div>
                         <div class="entry__excerpt">
                             <p>
-                            Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.
                             </p>
                         </div>
                     </div> <!-- end entry__text -->
-                
-                 </article> <!-- end article -->
- 
-            </div> <!-- end brick-wrapper --> 
- 
+
+                </article> <!-- end article -->
+
+            </div> <!-- end brick-wrapper -->
+
         </div> <!-- end masonry -->
 
         <div class="row">
@@ -640,7 +639,9 @@
                     <ul>
                         <li>
                             <a class="pgn__prev" href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.707 17.293L8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M12.707 17.293L8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path>
+                                </svg>
                             </a>
                         </li>
                         <li><a class="pgn__num" href="#0">1</a></li>
@@ -652,7 +653,9 @@
                         <li><a class="pgn__num" href="#0">8</a></li>
                         <li>
                             <a class="pgn__next" href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path>
+                                </svg>
                             </a>
                         </li>
                     </ul>
@@ -676,7 +679,7 @@
                     <h5>About Our Site</h5>
 
                     <p>
-                    Lorem ipsum Ut velit dolor Ut labore id fugiat in ut fugiat nostrud qui in dolore commodo eu magna Duis cillum dolor officia esse mollit proident Excepteur exercitation nulla. Lorem ipsum In reprehenderit commodo aliqua irure labore.
+                        Lorem ipsum Ut velit dolor Ut labore id fugiat in ut fugiat nostrud qui in dolore commodo eu magna Duis cillum dolor officia esse mollit proident Excepteur exercitation nulla. Lorem ipsum In reprehenderit commodo aliqua irure labore.
                     </p>
 
                 </div> <!-- end s-footer__info -->
@@ -693,7 +696,7 @@
                         <li><a href="#0">Privacy Policy</a></li>
                     </ul>
 
-                </div> <!-- end s-footer__site-links -->  
+                </div> <!-- end s-footer__site-links -->
 
                 <div class="column large-2 medium-3 tab-6 s-footer__social-links">
 
@@ -707,7 +710,7 @@
                         <li><a href="#0">Instagram</a></li>
                     </ul>
 
-                </div> <!-- end s-footer__social links --> 
+                </div> <!-- end s-footer__social links -->
 
                 <div class="column large-4 medium-12 s-footer__subscribe">
 
@@ -716,15 +719,15 @@
                     <p>Keep yourself updated. Subscribe to our newsletter.</p>
 
                     <div class="subscribe-form">
-                
+
                         <form id="mc-form" class="group" novalidate="true">
 
-                            <input type="email" value="" name="dEmail" class="email" id="mc-email" placeholder="Type &amp; press enter" required=""> 
-                
-                            <input type="submit" name="subscribe" >
-                
+                            <input type="email" value="" name="dEmail" class="email" id="mc-email" placeholder="Type &amp; press enter" required="">
+
+                            <input type="submit" name="subscribe">
+
                             <label for="mc-email" class="subscribe-message"></label>
-                
+
                         </form>
 
                     </div>
@@ -739,27 +742,29 @@
             <div class="row">
                 <div class="column">
                     <div class="ss-copyright">
-                        <span>© Copyright Abstract 2020</span> 
-                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>		         	
+                        <span>© Copyright Abstract 2020</span>
+                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
                     </div> <!-- end ss-copyright -->
                 </div>
-            </div> 
+            </div>
 
             <div class="ss-go-top">
                 <a class="smoothscroll" title="Back to Top" href="#top">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z" />
+                    </svg>
                 </a>
             </div> <!-- end ss-go-top -->
         </div> <!-- end s-footer__bottom -->
 
-   </footer> <!-- end s-footer -->
+    </footer> <!-- end s-footer -->
 
 
-   <!-- Java Script
+    <!-- Java Script
    ================================================== -->
-   <script src="./js/home/jquery-3.2.1.min.js"></script>
-   <script src="./js/home/plugins.js"></script>
-   <script src="./js/home/main.js"></script>
+    <script src="./js/home/jquery-3.2.1.min.js"></script>
+    <script src="./js/home/plugins.js"></script>
+    <script src="./js/home/main.js"></script>
 
 </body>
 

@@ -15,6 +15,10 @@ class Dashboard extends Controller
 
     public function index()
     {
+        if(! isLoggedIn()){
+            redirect('login/show');
+        }
+
         $user = $this->userModel->select('id', $_SESSION['user_id']);
 
         echo 'Welcome ' . $user->name;

@@ -64,3 +64,11 @@ if(!function_exists('redirect')){
     }
 
 }
+
+if(!function_exists('isLoggedIn')){
+
+    function isLoggedIn(){
+        return isset($_SESSION['user_id']) ? true : false;
+    }
+
+}

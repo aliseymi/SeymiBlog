@@ -17,11 +17,23 @@ class Register extends Controller
 
     public function show()
     {
+        if (isLoggedIn()) {
+            redirect('/');
+        }
+
         $this->view('auth.register');
     }
 
     public function register()
     {
+        if (isLoggedIn()) {
+            redirect('/');
+        }
+
+        if (!strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
+            redirect('register/show');
+        }
+
         $data = $_POST;
         $status = Validator::validate($data, [
             'name'                  => 'required|min:3|max:64',
@@ -30,14 +42,14 @@ class Register extends Controller
             'password_confirmation'      => 'required|same:password',
         ]);
 
-        if($status !== true){
-            
+        if ($status !== true) {
+
             $this->view('auth.register', ['errors' => $status]);
         }
 
         $user = $this->userModel->select('email', $data['email']);
 
-        if(!is_null($user)){
+        if (!is_null($user)) {
             $this->view('auth.register', ['errors' => 'The entered email already exists!']);
         }
 
