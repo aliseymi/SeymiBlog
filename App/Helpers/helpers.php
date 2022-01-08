@@ -24,12 +24,43 @@ if(!function_exists('asset')){
 
 }
 
+if(!function_exists('url')){
+
+    function url(string $path = ''){   
+        if($path == '') 
+            return BASE_URl;
+              
+        return BASE_URl . ltrim($path, '/');
+    }
+}
+
+if(!function_exists('dump_die')){
+
+    function dump_die(...$vars){ 
+        echo '<pre>';  
+        var_dump(...$vars);
+        echo '</pre>';  
+        die();
+    }
+    
+}
+
 if(!function_exists('load_view')){
 
-    function load_view(string $path){
+    function load_view(string $path, array $data = []){
         $view_base_path = realpath(__DIR__ . '/../Views') . '/';
 
+        extract($data);
+
         include $view_base_path . str_replace('.', '/', $path) . '.php';
+    }
+
+}
+
+if(!function_exists('redirect')){
+
+    function redirect(string $path){
+        header('Location: '.url($path).'');
     }
 
 }

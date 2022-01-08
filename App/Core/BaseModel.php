@@ -39,10 +39,10 @@ class BaseModel
         return $this->db->{$this->table}->insert($data)->get();
     }
 
-    public function select(int $id = null)
+    public function select(string $column = null, string|int $value = null)
     {
-        if(!is_null($id))
-            return $this->db->{$this->table}->select()->where('id = ', $id)->get();
+        if(!is_null($column) && !is_null($value))
+            return $this->db->{$this->table}->select()->one()->where("$column = ", $value)->get();
 
         return $this->db->{$this->table}->select()->get();
     }

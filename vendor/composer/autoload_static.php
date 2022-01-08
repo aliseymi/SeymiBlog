@@ -11,6 +11,10 @@ class ComposerStaticInitb2801016e8b383b81eaf36adb1863413
         array (
             'SimpleCrud\\' => 11,
         ),
+        'R' => 
+        array (
+            'Rakit\\Validation\\' => 17,
+        ),
         'P' => 
         array (
             'Psr\\EventDispatcher\\' => 20,
@@ -27,6 +31,10 @@ class ComposerStaticInitb2801016e8b383b81eaf36adb1863413
         'SimpleCrud\\' => 
         array (
             0 => __DIR__ . '/..' . '/simple-crud/simple-crud/src',
+        ),
+        'Rakit\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rakit/validation/src',
         ),
         'Psr\\EventDispatcher\\' => 
         array (

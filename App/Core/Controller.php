@@ -29,8 +29,8 @@ class Controller
     
         extract($data);
 
-        require_once $file_path;
+        require $file_path;
 
-        return;
+        die;
     }
 }

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'SimpleCrud\\' => array($vendorDir . '/simple-crud/simple-crud/src'),
+    'Rakit\\Validation\\' => array($vendorDir . '/rakit/validation/src'),
     'Psr\\EventDispatcher\\' => array($vendorDir . '/psr/event-dispatcher/src'),
     'Atlas\\Query\\' => array($vendorDir . '/atlas/query/src'),
     'Atlas\\Pdo\\' => array($vendorDir . '/atlas/pdo/src'),

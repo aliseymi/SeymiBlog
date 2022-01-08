@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'c46e353d31224823c4df250209c46cf591f56e86',
+        'reference' => '860d4ff29f4de32a49a378bd3c0dcf03fd945c7a',
         'name' => 'ali/seymiblog',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'c46e353d31224823c4df250209c46cf591f56e86',
+            'reference' => '860d4ff29f4de32a49a378bd3c0dcf03fd945c7a',
             'dev_requirement' => false,
         ),
         'atlas/pdo' => array(
@@ -44,6 +44,15 @@
             'install_path' => __DIR__ . '/../psr/event-dispatcher',
             'aliases' => array(),
             'reference' => 'dbefd12671e8a14ec7f180cab83036ed26714bb0',
+            'dev_requirement' => false,
+        ),
+        'rakit/validation' => array(
+            'pretty_version' => 'v1.4.0',
+            'version' => '1.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../rakit/validation',
+            'aliases' => array(),
+            'reference' => 'ff003a35cdf5030a5f2482299f4c93f344a35b29',
             'dev_requirement' => false,
         ),
         'simple-crud/simple-crud' => array(
