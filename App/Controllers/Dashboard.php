@@ -21,6 +21,6 @@ class Dashboard extends Controller
 
         $user = $this->userModel->select('id', $_SESSION['user_id']);
 
-        echo 'Welcome ' . $user->name;
+        $this->view('dashboard.index', compact('user'));
     }
 }
