@@ -47,6 +47,14 @@ class BaseModel
         return $this->db->{$this->table}->select()->get();
     }
 
+    public function selectAll(string $column = null, string|int $value = null)
+    {
+        if(!is_null($column) && !is_null($value))
+            return $this->db->{$this->table}->select()->where("$column = ", $value)->get();
+
+        return $this->db->{$this->table}->select()->get();
+    }
+
     public function update(int $id, array $data)
     {
         return $this->db->{$this->table}[$id] = $data;
