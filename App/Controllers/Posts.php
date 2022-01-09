@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Core\Database;
+use App\Utilities\ImageUploader;
+use App\Utilities\Validator;
 
 class Posts extends Controller
 {
@@ -17,22 +19,64 @@ class Posts extends Controller
 
     public function all()
     {
-        echo 'hi from all';
+        if(!isLoggedIn()){
+            redirect('/');
+        }
+
+        $this->view('dashboard.posts.all');
     }
 
     public function add()
     {
-        $post = $this->postModel->insert([
-            'title' => 'test',
-            'body' => 'this is a test',
-            'user_id' => 1,
-        ]);
+        if(!isLoggedIn()){
+            redirect('/');
+        }
 
-        var_dump($post);
+        $this->view('dashboard.posts.add');
     }
 
-    public function show()
+    public function store()
     {
-        $this->view('index', ['title' => config('app.title')]);
+        if(!isLoggedIn()){
+            redirect('/');
+        }
+
+        if(!isValidRequestMethod('post')){
+            redirect('/');
+        }
+
+        $data = $_POST;
+
+        $status = Validator::validate($data + $_FILES, [
+            'title' => 'required|min:3',
+            'body' => 'required|min:10',
+            'image' => 'required|uploaded_file:0,10240k,jpeg,jpg,png'
+        ]);
+
+        if($status !== true){
+            $this->view('dashboard.posts.add', ['errors' => $status]);
+        }
+
+        $inserted_id = $this->postModel->insert([
+            'title' => $data['title'],
+            'body' => $data['body'],
+            'user_id' => getLoggedInUserId()
+        ]);
+
+        if(!$inserted_id){
+            $this->view('dashboard.posts.add', ['errors' => 'The submitted post did not create!']);
+        }
+
+        $result = ImageUploader::upload($_FILES['image'], 'posts/post_' . $inserted_id, $_FILES['image']['name']);
+
+        if(!is_string($result)){
+            $this->view('dashboard.posts.add', ['errors' => $result]);
+        }
+
+        $this->postModel->update($inserted_id, [
+            'image' => $result
+        ]);
+
+        redirect('posts/all');
     }
 }

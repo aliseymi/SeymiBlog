@@ -55,6 +55,7 @@ class ComposerStaticInitb2801016e8b383b81eaf36adb1863413
     );
 
     public static $classMap = array (
+        'Bulletproof\\Image' => __DIR__ . '/..' . '/samayo/bulletproof/src/bulletproof.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 

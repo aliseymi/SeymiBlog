@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '860d4ff29f4de32a49a378bd3c0dcf03fd945c7a',
+        'reference' => '1173eb2b574291e59957da7cb50b40f6cdf6b806',
         'name' => 'ali/seymiblog',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '860d4ff29f4de32a49a378bd3c0dcf03fd945c7a',
+            'reference' => '1173eb2b574291e59957da7cb50b40f6cdf6b806',
             'dev_requirement' => false,
         ),
         'atlas/pdo' => array(
@@ -53,6 +53,15 @@
             'install_path' => __DIR__ . '/../rakit/validation',
             'aliases' => array(),
             'reference' => 'ff003a35cdf5030a5f2482299f4c93f344a35b29',
+            'dev_requirement' => false,
+        ),
+        'samayo/bulletproof' => array(
+            'pretty_version' => 'v4.0.1',
+            'version' => '4.0.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../samayo/bulletproof',
+            'aliases' => array(),
+            'reference' => '4e485530522c0f3af81eba3955f1c459401cdd54',
             'dev_requirement' => false,
         ),
         'simple-crud/simple-crud' => array(

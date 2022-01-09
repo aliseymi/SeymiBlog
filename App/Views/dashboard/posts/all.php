@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dashboard</title>
+    <title>All Posts</title>
 
     <?= load_view('dashboard.includes.header') ?>
 
@@ -28,7 +28,7 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Welcome <?= $user->name ?></h1>
+                        <h1 class="page-header">All Post</h1>
                     </div>
                 </div>
 

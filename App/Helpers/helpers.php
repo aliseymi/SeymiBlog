@@ -72,3 +72,23 @@ if(!function_exists('isLoggedIn')){
     }
 
 }
+
+if(!function_exists('getLoggedInUserId')){
+
+    function getLoggedInUserId(){
+        return $_SESSION['user_id'];
+    }
+
+}
+
+if(!function_exists('isValidRequestMethod')){
+
+    function isValidRequestMethod(string $method){
+        if(strtolower($_SERVER['REQUEST_METHOD']) == strtolower($method))
+            return true; 
+
+        return false;    
+
+    }
+
+}

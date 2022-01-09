@@ -16,8 +16,8 @@
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="./css/home/styles.css">
-    <link rel="stylesheet" href="./css/home/vendor.css">
+    <link rel="stylesheet" href="<?= asset('css/home/styles.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/home/vendor.css') ?>">
 
     <!-- script
     ================================================== -->
@@ -25,9 +25,9 @@
 
     <!-- favicons
     ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= asset('apple-touch-icon.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= asset('favicon-32x32.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= asset('favicon-16x16.png') ?>">
     <link rel="manifest" href="site.webmanifest">
 
 </head>
@@ -50,7 +50,7 @@
 
             <div class="s-header__logo">
                 <a class="logo" href="index.html">
-                    <img src="./img/home/logo.svg" alt="Homepage">
+                    <img src="<?= asset('img/home/logo.svg') ?>" alt="Homepage">
                 </a>
             </div>
 
@@ -84,6 +84,7 @@
                                 <li><a href="single-standard.html">Standard Post</a></li>
                             </ul>
                         </li>
+                        <li><a href="<?= url('dashboard/index') ?>" title="">Dashboard</a></li>
 
                     <?php else : ?>
 
@@ -142,7 +143,7 @@
                             <div class="featured-post-slide">
                                 <div class="f-slide">
 
-                                    <div class="f-slide__background" style="background-image:url('./img/home/thumbs/featured/featured-1.jpg');"></div>
+                                    <div class="f-slide__background" style="background-image:url('<?= asset('img/home/thumbs/featured/featured-1.jpg') ?>');"></div>
                                     <div class="f-slide__overlay"></div>
 
                                     <div class="f-slide__content">
@@ -160,7 +161,7 @@
                             <div class="featured-post-slide">
                                 <div class="f-slide">
 
-                                    <div class="f-slide__background" style="background-image:url('./img/home/thumbs/featured/featured-2.jpg');"></div>
+                                    <div class="f-slide__background" style="background-image:url('<?= asset('img/home/thumbs/featured/featured-2.jpg') ?>');"></div>
                                     <div class="f-slide__overlay"></div>
 
                                     <div class="f-slide__content">
@@ -178,7 +179,7 @@
                             <div class="featured-post-slide">
                                 <div class="f-slide">
 
-                                    <div class="f-slide__background" style="background-image:url('./img/home/thumbs/featured/featured-3.jpg');"></div>
+                                    <div class="f-slide__background" style="background-image:url('<?= asset('img/home/thumbs/featured/featured-3.jpg') ?>');"></div>
                                     <div class="f-slide__overlay"></div>
 
                                     <div class="f-slide__content">
@@ -215,7 +216,7 @@
 
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/woodcraft-600.jpg" srcset="./img/home/thumbs/masonry/woodcraft-600.jpg 1x, ./img/home/thumbs/masonry/woodcraft-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/woodcraft-600.jpg') ?>" srcset="./img/home/thumbs/masonry/woodcraft-600.jpg 1x, ./img/home/thumbs/masonry/woodcraft-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
 
@@ -245,7 +246,7 @@
 
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/tulips-600.jpg" srcset="./img/home/thumbs/masonry/tulips-600.jpg 1x, ./img/home/thumbs/masonry/tulips-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/tulips-600.jpg') ?>" srcset="./img/home/thumbs/masonry/tulips-600.jpg 1x, ./img/home/thumbs/masonry/tulips-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
 
@@ -274,7 +275,7 @@
 
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/dew-600.jpg" srcset="./img/home/thumbs/masonry/dew-600.jpg 1x, ./img/home/thumbs/masonry/dew-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/dew-600.jpg') ?>" srcset="./img/home/thumbs/masonry/dew-600.jpg 1x, ./img/home/thumbs/masonry/dew-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
 
@@ -316,7 +317,7 @@
 
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/rucksack-600.jpg" srcset="./img/home/thumbs/masonry/rucksack-600.jpg 1x, ./img/home/thumbs/masonry/rucksack-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/rucksack-600.jpg') ?>" srcset="./img/home/thumbs/masonry/rucksack-600.jpg 1x, ./img/home/thumbs/masonry/rucksack-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
 
@@ -346,7 +347,7 @@
 
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/jump-600.jpg" srcset="./img/home/thumbs/masonry/jump-600.jpg 1x, ./img/home/thumbs/masonry/jump-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/jump-600.jpg') ?>" srcset="./img/home/thumbs/masonry/jump-600.jpg 1x, ./img/home/thumbs/masonry/jump-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
 
@@ -377,13 +378,13 @@
                     <div class="entry__thumb slider">
                         <div class="slider__slides">
                             <div class="slider__slide">
-                                <img src="./img/home/thumbs/masonry/gallery/slide-1-600.jpg" srcset="./img/home/thumbs/masonry/gallery/slide-1-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-1-1200.jpg 2x" alt="">
+                                <img src="<?= asset('img/home/thumbs/masonry/gallery/slide-1-600.jpg') ?>" srcset="./img/home/thumbs/masonry/gallery/slide-1-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-1-1200.jpg 2x" alt="">
                             </div>
                             <div class="slider__slide">
-                                <img src="./img/home/thumbs/masonry/gallery/slide-2-600.jpg" srcset="./img/home/thumbs/masonry/gallery/slide-2-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-2-1200.jpg 2x" alt="">
+                                <img src="<?= asset('img/home/thumbs/masonry/gallery/slide-2-600.jpg') ?>" srcset="./img/home/thumbs/masonry/gallery/slide-2-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-2-1200.jpg 2x" alt="">
                             </div>
                             <div class="slider__slide">
-                                <img src="./img/home/thumbs/masonry/gallery/slide-3-600.jpg" srcset="./img/home/thumbs/masonry/gallery/slide-3-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-3-1200.jpg 2x" alt="">
+                                <img src="<?= asset('img/home/thumbs/masonry/gallery/slide-3-600.jpg') ?>" srcset="./img/home/thumbs/masonry/gallery/slide-3-600.jpg 1x, ./img/home/thumbs/masonry/gallery/slide-3-1200.jpg 2x" alt="">
                             </div>
                         </div>
                     </div> <!-- end entry__thumb -->
@@ -426,7 +427,7 @@
 
                     <div class="entry__thumb">
                         <a href="single-audio.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/guitarist-600.jpg" srcset="./img/home/thumbs/masonry/guitarist-600.jpg 1x, ./img/home/thumbs/masonry/guitarist-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/guitarist-600.jpg') ?>" srcset="./img/home/thumbs/masonry/guitarist-600.jpg 1x, ./img/home/thumbs/masonry/guitarist-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry--thumb -->
 
@@ -455,7 +456,7 @@
 
                     <div class="entry__thumb video-image">
                         <a href="https://player.vimeo.com/video/117310401?color=ffffff&title=0&byline=0&portrait=0" data-lity class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/cookies-600.jpg" srcset="./img/home/thumbs/masonry/cookies-600.jpg 1x, ./img/home/thumbs/masonry/cookies-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/cookies-600.jpg') ?>" srcset="./img/home/thumbs/masonry/cookies-600.jpg 1x, ./img/home/thumbs/masonry/cookies-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
 
@@ -485,7 +486,7 @@
 
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/walk-600.jpg" srcset="./img/home/thumbs/masonry/walk-600.jpg 1x, ./img/home/thumbs/masonry/walk-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/walk-600.jpg') ?>" srcset="./img/home/thumbs/masonry/walk-600.jpg 1x, ./img/home/thumbs/masonry/walk-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
 
@@ -514,7 +515,7 @@
 
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/lamp-600.jpg" srcset="./img/home/thumbs/masonry/lamp-600.jpg 1x, ./img/home/thumbs/masonry/lamp-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/lamp-600.jpg') ?>" srcset="./img/home/thumbs/masonry/lamp-600.jpg 1x, ./img/home/thumbs/masonry/lamp-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
 
@@ -544,7 +545,7 @@
 
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/real-600.jpg" srcset="./img/home/thumbs/masonry/real-600.jpg 1x, ./img/home/thumbs/masonry/real-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/real-600.jpg') ?>" srcset="./img/home/thumbs/masonry/real-600.jpg 1x, ./img/home/thumbs/masonry/real-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
 
@@ -574,7 +575,7 @@
 
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/beetle-600.jpg" srcset="./img/home/thumbs/masonry/beetle-600.jpg 1x, ./img/home/thumbs/masonry/beetle-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/beetle-600.jpg') ?>" srcset="./img/home/thumbs/masonry/beetle-600.jpg 1x, ./img/home/thumbs/masonry/beetle-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
 
@@ -603,7 +604,7 @@
 
                     <div class="entry__thumb">
                         <a href="single-standard.html" class="thumb-link">
-                            <img src="./img/home/thumbs/masonry/seashore-600.jpg" srcset="./img/home/thumbs/masonry/seashore-600.jpg 1x, ./img/home/thumbs/masonry/seashore-1200.jpg 2x" alt="">
+                            <img src="<?= asset('img/home/thumbs/masonry/seashore-600.jpg') ?>" srcset="./img/home/thumbs/masonry/seashore-600.jpg 1x, ./img/home/thumbs/masonry/seashore-1200.jpg 2x" alt="">
                         </a>
                     </div> <!-- end entry__thumb -->
 
@@ -762,9 +763,9 @@
 
     <!-- Java Script
    ================================================== -->
-    <script src="./js/home/jquery-3.2.1.min.js"></script>
-    <script src="./js/home/plugins.js"></script>
-    <script src="./js/home/main.js"></script>
+    <script src="<?= asset('js/home/jquery-3.2.1.min.js') ?>"></script>
+    <script src="<?= asset('js/home/plugins.js') ?>"></script>
+    <script src="<?= asset('js/home/main.js') ?>"></script>
 
 </body>
 
