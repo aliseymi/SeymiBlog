@@ -167,4 +167,19 @@ class Posts extends Controller
 
         redirect('posts/all');
     }
+
+    public function show($post_id)
+    {
+        if(!isLoggedIn()){
+            redirect('/');
+        }
+
+        $post = $this->postModel->select('id', $post_id);
+
+        if(is_null($post)){
+            redirect('/');
+        }
+
+        $this->view('posts.show', ['post' => $post]);
+    }
 }
